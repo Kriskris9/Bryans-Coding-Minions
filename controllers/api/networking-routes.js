@@ -3,7 +3,7 @@ const { Networking, User } = require('../../models');
 
 //these are the routes for the api/memes endpoint
 //the api/memes endpoint
-// test comment to commit 
+// test comment
 
 router.get('/', async (req, res) => {
   //find all networking events
