@@ -1,5 +1,26 @@
+
 <div class="container">
   {{!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> --}}
   <p>Hello. How are you today?</p>
   <span> ##add time </span>
 </div>
+{{/each}}
+
+<div class="container darker">
+  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+  <p>Hey! I'm fine. Thanks for asking!</p>
+  <span class="time-left">11:01</span>
+</div>
+
+
+
+
+{{#each messages}}
+  <div class="container {{#if this.isSender}} {{/if}}">
+    {{#if this.photo}}
+      <img src="{{this.photo}}" alt="Avatar" class="{{#if this.isSender}}right{{/if}}">
+    {{/if}}
+    <p>{{this.text}}</p>
+    <span class="{{#if this.isSender}}time-left{{else}}time-right{{/if}}">{{this.time}}</span>
+  </div>
+{{/each}}
