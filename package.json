@@ -14,6 +14,7 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cloudinary": "^1.36.1",
+    "connect-session-sequelize": "^7.1.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
