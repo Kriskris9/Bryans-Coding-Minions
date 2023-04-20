@@ -30,9 +30,9 @@ User.hasMany(Chat, {
 
 });
 
-Chat.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+// Chat.belongsTo(User, {
+//   foreignKey: 'user_id'
+// });
 
 User.hasMany(Networking, {
   foreignKey: 'user_id',
