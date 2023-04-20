@@ -1,26 +1,39 @@
-
-<div class="container">
-  {{!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> --}}
-  <p>Hello. How are you today?</p>
-  <span> ##add time </span>
-</div>
-{{/each}}
-
-<div class="container darker">
-  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
-  <p>Hey! I'm fine. Thanks for asking!</p>
-  <span class="time-left">11:01</span>
-</div>
-
-
-
-
-{{#each messages}}
-  <div class="container {{#if this.isSender}} {{/if}}">
-    {{#if this.photo}}
-      <img src="{{this.photo}}" alt="Avatar" class="{{#if this.isSender}}right{{/if}}">
-    {{/if}}
-    <p>{{this.text}}</p>
-    <span class="{{#if this.isSender}}time-left{{else}}time-right{{/if}}">{{this.time}}</span>
-  </div>
-{{/each}}
+{{#if loggedIn}}
+<div class= "chat">
+  <form action="/chat" method="POST">
+    <label for="user_name">Username:</label>
+    <input type="text" id="user_name" name="user_name">
+    <label for="message">Message:</label>
+    <input type="text" id="message" name="message">
+    <label for="media">Media:</label>
+    <select id="media" name="media">
+      <option value="none">None</option>
+      <option value="image">Image</option>
+      <option value="gif">GIF</option>
+      <option value="video">Video</option>
+    </select>
+    <div id="media-input">
+      <label for="media_file">File:</label>
+      <input type="file" id="media_file" name="media_file">
+    </div>
+    <button type="submit">Send</button>
+  </form>
+  {{#each messages as |message|}}
+    <section class="chat">
+      {{#if photo}}
+        <img src="/images/{{photo}}" alt="Photo">
+      {{else if gif}}
+        <img src="/images/{{gif}}" alt="GIF">
+      {{else if video}}
+        <video src="/videos/{{video}}" controls></video>
+      {{/if}}
+      <div class="chat-details">
+        <h3>{{user_name}}</h3>
+        <p>{{message}}</p>
+      </div>
+    </section>
+  {{/each}}
+   </div>
+{{else}}
+  <a href="/login">You must login first to view this page</a>
+{{/if}}
