@@ -1,0 +1,74 @@
+* {
+    color:white;
+    font-family: 'PT Mono', monospace;
+}
+body {
+    padding: 1%;
+    background-color: black;
+}
+img {
+    display: flex;
+    max-width: 25%;
+
+}
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    margin-bottom: 4%;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+button {
+    background-color: #f64c72;
+    border-radius: 16px;
+    border: none;
+    margin-left: 5px;
+    transition: all 0.2s ease-in-out;
+    
+}
+button:hover {
+    background-color: #f62d58;
+    transform: scale(1.1); 
+}
+#chatbox {
+    border: 2px solid royalblue;
+    position: relative;
+    background: royalblue;
+    color: white;
+    padding-bottom: 30%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+#recent-convos{
+    background: #2f2fa2;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+input {
+    position: absolute;
+    width: 75%;
+    bottom: 5px;
+    background-color: lavender;
+    border: none;
+    border-radius: 10px;
+}
+.message {
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.content-buttons {
+    margin-left: 6%;
+}
+.col-sm-3 {
+    margin-right: 20px;
+    margin-bottom: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 30px;
+}

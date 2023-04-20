@@ -1,0 +1,54 @@
+* {
+    font-family: 'PT Mono', monospace;
+}
+body {
+    padding: 1%;
+    background-color: black;
+}
+img {
+    display: flex;
+    max-width: 25%;
+
+}
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    margin-bottom: 4%;
+}
+header {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+}
+button {
+    background-color: #f64c72;
+    border-radius: 16px;
+    border: none;
+    margin-left: 5px;
+    transition: all 0.2s ease-in-out;
+    
+}
+button:hover {
+    background-color: #f62d58;
+    transform: scale(1.1); 
+}
+
+
+
+main {
+    padding-top: 4%;
+    
+}
+
+
+.card {
+    margin-left: 7%;
+    align-self: flex-start;
+    margin-bottom: 3%;
+}
+.the-cards {
+    display: flex;
+    flex-flow: row wrap;
+}
