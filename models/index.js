@@ -10,8 +10,6 @@ User.hasMany(Study, {
   onDelete: 'CASCADE'
 });
 
-
-
 Study.belongsTo(User, {
   foreignKey: 'user_id'
 });
@@ -23,18 +21,14 @@ User.hasMany(Memes, {
 });
 
 
-
-
 Memes.belongsTo(User, {
   foreignKey: 'user_id'
 });
-
 
 User.hasMany(Chat, {
   foreignKey: 'user_id',
 
 });
-
 
 Chat.belongsTo(User, {
 

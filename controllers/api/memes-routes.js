@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Memes, User } = require('../models');
+const { Memes, User } = require('../../models');
 
 //these are the routes for the api/memes endpoint
 //the api/memes endpoint
@@ -63,4 +63,4 @@ router.put('/:id', async (req, res) => {
   };
 });
 
-
+module.exports = router;
