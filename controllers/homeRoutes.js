@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/study', async (req, res) => {
+router.get('/study', withAuth, async (req, res) => {
     try {
         const studyData = await Study.findAll({
             include: [{ model: User }]
