@@ -3,9 +3,7 @@ const { Chat, User } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const chatData = await Chat.findAll(
-            {include: [{model: User,  attributes: ['user_name']}]
-    });
+        const chatData = await Chat.findAll();
         res.status(200).json(chatData);
         res.render('chat', { chatData });
         console.log(chatData);
