@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const { Memes } = require('../models');
 
+// memes seeds
 
 const memesData =
 [
