@@ -32,6 +32,10 @@ Chat.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
+        fromUser: {
+            type: DataTypes.BOOLEAN,
+            DEFAULT: false,
+        }
     },
     {
         sequelize,
