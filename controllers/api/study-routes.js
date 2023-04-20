@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const {Study} = require('../../models');
-​
-​
-//these are the routes for the /api/study routes
-​
+
 //get all study tips
 router.get('/', async (req, res, next) => {
   try {
@@ -13,7 +10,7 @@ router.get('/', async (req, res, next) => {
     next(err);
   }
 });
-​
+
 //get one study tip
 router.get('/:id', async (req, res, next) => {
   try {
@@ -23,7 +20,7 @@ router.get('/:id', async (req, res, next) => {
     next(err);
   }
 });
-​
+
 //create a new study tip
 router.post('/', async (req, res, next) => {
   try {
@@ -33,7 +30,7 @@ router.post('/', async (req, res, next) => {
     next(err);
   }
 });
-​
+
 //update a study tip
 router.put('/:id', async (req, res, next) => {
   try {
@@ -47,3 +44,5 @@ router.put('/:id', async (req, res, next) => {
     next(err);
   }
 });
+
+module.exports = router;

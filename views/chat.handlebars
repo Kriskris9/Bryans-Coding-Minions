@@ -23,9 +23,11 @@
     <section class="chat">
       {{#if photo}}
         <img src="/images/{{chat.photo}}" alt="Photo">
-      {{else if gif}}
+      {{/if}}
+      {{#if gif}}
         <img src="/images/{{chat.gif}}" alt="GIF">
-      {{else if video}}
+      {{/if}}
+      {{#if video}}
         <video src="/videos/{{chat.video}}" controls></video>
       {{/if}}
       <div class="chat-details">
@@ -41,7 +43,7 @@
 
 
 {{#each Users as user}}
-{{if chat}}
+{{#if chat}}
 <div class="container">
   {{!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> --}}
   <p>Hello. How are you today?</p>
