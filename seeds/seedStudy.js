@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const {Study}= require('../models');
 
+// seeds data
 
 const studySeedData = [
     {
