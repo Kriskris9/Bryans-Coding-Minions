@@ -1,6 +1,6 @@
-const seedUsers = require('./user');
+const seedUsers = require('./seedUsers');
 const seedNetworking = require('./seedNetworking');
-const seedMemes = require('./seedMemes.js');
+const seedMemes = require('./seedMemes');
 const seedStudy = require('./seedStudy');
 const seedChat = require('./seedChat');
 
