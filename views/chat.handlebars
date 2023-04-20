@@ -19,18 +19,18 @@
     </div>
     <button type="submit">Send</button>
   </form>
-  {{#each messages as |message|}}
+  {{#each chats as |chat|}}
     <section class="chat">
       {{#if photo}}
-        <img src="/images/{{photo}}" alt="Photo">
+        <img src="/images/{{chat.photo}}" alt="Photo">
       {{else if gif}}
-        <img src="/images/{{gif}}" alt="GIF">
+        <img src="/images/{{chat.gif}}" alt="GIF">
       {{else if video}}
-        <video src="/videos/{{video}}" controls></video>
+        <video src="/videos/{{chat.video}}" controls></video>
       {{/if}}
       <div class="chat-details">
-        <h3>{{user_name}}</h3>
-        <p>{{message}}</p>
+        <h3>{{chat.user_name}}</h3>
+        <p>{{chat.message}}</p>
       </div>
     </section>
   {{/each}}
