@@ -52,7 +52,7 @@ router.get('/networking', withAuth, async (req, res) => {
     }
 });
 
-router.get('/chat', withAuth, async (req, res) => {
+router.get('/chat',  async (req, res) => {
     try {
         const chatData = await Chat.findAll({
             include: [{ model: User }]

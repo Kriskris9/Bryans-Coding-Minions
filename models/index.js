@@ -31,7 +31,6 @@ User.hasMany(Chat, {
 });
 
 Chat.belongsTo(User, {
-
   foreignKey: 'user_id'
 });
 
