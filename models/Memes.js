@@ -11,6 +11,14 @@ Memes.init(
         primaryKey: true,
         autoIncrement: true,
         },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
     photo: {
         type: DataTypes.STRING,
         allowNull: false,
