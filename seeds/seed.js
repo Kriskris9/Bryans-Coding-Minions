@@ -1,7 +1,7 @@
 const seedUsers = require('./user');
-const seedNetworking = require('./networking');
+const seedNetworking = require('./seedNetworking');
 const seedMemes = require('./memes');
- const seedStudy = require('./study');
+const seedStudy = require('./seedStudy');
 const seedChat = require('./seedChat');
 
 const sequelize = require('../config/connection');
