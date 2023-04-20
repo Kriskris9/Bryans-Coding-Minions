@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Networking, User } = require('../../models');
 
 //these are the routes for the api/memes endpoint
+// this is a test 
 
 
 router.get('/', async (req, res) => {
