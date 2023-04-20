@@ -13,4 +13,3 @@ const logout = async () => {
   
   document.querySelector('#logout').addEventListener('click', logout);
   
-]// require api routes and have router.use api routes
