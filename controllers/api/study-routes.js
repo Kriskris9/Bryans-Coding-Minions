@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Study} = require('../db/models');
+const {Study} = require('../../models');
 ​
 ​
 //these are the routes for the /api/study routes
