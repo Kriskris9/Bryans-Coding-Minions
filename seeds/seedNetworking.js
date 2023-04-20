@@ -42,7 +42,7 @@ const networkingData = [
     "link": "https://www.example.com/event6",
     "event_name": "Sydney Blockchain Weekend",
     "date": "2024-04-15",
-    "photo": "https://www.example.com/event6.jpg"
+    "photo": "https://www.example.com/event6.jpg",
   },
 ];
 
