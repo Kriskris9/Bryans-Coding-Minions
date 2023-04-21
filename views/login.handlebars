@@ -1,6 +1,6 @@
     <div class="wrapper">
       <div class="title">Login Form</div>
-      <form action="#">
+      <form class="form login-form" action="#">
         <div class="field">
           <input type="text" required>
           <label>Email Address</label>
@@ -17,14 +17,18 @@
     </div>
     <div class="wrapper">
       <div class="title"> Signup </div>
-      <form action="#">
-        <div class="field">
-          <input type="text" required>
-          <label>Email Address</label>
+      <form class="form signup-form" action="#">
+         <div class="field">
+          <input class="form-input" type="text" id="username-signup" />
+          <label for="username-signup">Username:</label>
         </div>
         <div class="field">
-          <input type="password" required>
-          <label>Password</label>
+          <input class="form-input" type="text" id="email-signup" />
+          <label for="email-signup">Email Address:</label>
+        </div>
+        <div class="field">
+          <input class="form-input" type="password" id="password-signup" />
+          <label>Password:</label>
         </div>
         <div class="content">
         <div class="field">
