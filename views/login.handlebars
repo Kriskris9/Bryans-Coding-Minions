@@ -1,36 +1,43 @@
     <div class="wrapper">
       <div class="title">Login Form</div>
-      <form action="#">
+      <form class="form login-form" action="#">
         <div class="field">
-          <input type="text" required>
-          <label>Email Address</label>
+        <label for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" />
         </div>
         <div class="field">
-          <input type="password" required>
-          <label>Password</label>
+        <label for="password-login">Password:</label>
+        <input class="form-input" type="password" id="password-login" />
         </div>
         <div class="content">
         <div class="field">
-          <input type="submit" value="Login">
+        <button class="btn btn-primary" type="submit">Login</button>
         </div>
       </form>
     </div>
     <div class="wrapper">
-      <div class="title"> Signup </div>
-      <form action="#">
-        <div class="field">
-          <input type="text" required>
-          <label>Email Address</label>
+      <div class="title"> Sign Up </div>
+      <form class="form signup-form" action="#">
+         <div class="field">
+          <input class="form-input" type="text" id="username-signup" />
+          <label for="username-signup">Username:</label>
         </div>
         <div class="field">
-          <input type="password" required>
-          <label>Password</label>
+          <input class="form-input" type="text" id="email-signup" />
+          <label for="email-signup">Email Address:</label>
+        </div>
+        <div class="field">
+          <input class="form-input" type="password" id="password-signup" />
+          <label>Password:</label>
         </div>
         <div class="content">
         <div class="field">
-          <input type="submit" value="Sign Up">
+           <button class="btn btn-primary" type="submit">Sign Up</button>
         </div>
       </form>
     </div>
 
     <script src="/public/js/login.js"></script>
+
+
+ 

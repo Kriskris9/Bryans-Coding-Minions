@@ -1,0 +1,20 @@
+{{#each studytips as |studytip|}}
+<div>
+  <h3>{{studytip.tip}}</h3>
+<a href="{{studytip.link}}">{{studytip.link}}</a>
+
+  {{#if photo}}
+    <img src="{{studytip.photo}}" alt="Photo">
+  {{/if}}
+  {{#if gif}}
+    <img src="{{studytip.gif}}" alt="GIF">
+  {{/if}}
+  {{#if video}}
+    <video src="{{studytip.video}}" alt="Video"></video>
+  {{/if}}
+</div>
+{{/each}}
+
+<script src="./js/study.js"></script>
+
+

@@ -1,0 +1,24 @@
+{{#each memes as |meme|}}
+<div class="meme">
+  <h3>{{meme.title}}</h3>
+  <p>{{meme.description}}</p>
+{{#if photo}}
+        <img src="/images/{{meme.photo}}" alt="Photo">
+      {{/if}}
+ {{#if gif}}
+        <img src="/images/{{meme.gif}}" alt="GIF">
+      {{/if}}
+{{#if video}}
+        <video src="/videos/{{meme.video}}" alt="video"></video>
+      {{/if}}   
+  <a href="{{meme.link}}">{{meme.link}}</a>
+</div>
+{{/each}}
+
+{{!-- add script for meme --}}
+
+<script src="./js/memes.js"></script>
+
+
+
+

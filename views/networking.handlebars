@@ -1,0 +1,21 @@
+<h1>Networking Events</h1>
+
+<ul>
+  {{#each events as |event|}}
+    <li>
+      <p><strong>{{event.event_name}}</strong></p>
+      <p>{{event.location}}</p>
+      <p>{{event.date}}</p>
+      <a href="{{event.link}}">Event Link</a>
+      {{#if event.photo}}
+        <img src="{{event.photo}}" alt="{{event.event_name}} Photo">
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+
+
+
+<script src="./js/networking.js"></script> 
+
+

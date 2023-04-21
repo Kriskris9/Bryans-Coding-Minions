@@ -54,8 +54,26 @@
     </div>
     <button type="submit">Send</button>
   </form>
-  {{else}}
+
+  {{#each chats as |chat|}}
+    <section class="chat">
+      {{#if photo}}
+        <img src="/images/{{chat.photo}}" alt="Photo">
+      {{/if}}
+      {{#if gif}}
+        <img src="/images/{{chat.gif}}" alt="GIF">
+      {{/if}}
+      {{#if video}}
+        <video src="/videos/{{chat.video}}" alt="video"></video>
+      {{/if}}
+      <div class="chat-details">
+        <h3>{{chat.user_name}}</h3>
+        <p>{{chat.message}}</p>
+      </div>
+    </section>
+  {{/each}}
+   </div>
+{{else}}
+
   <a href="/login">You must login first to view this page</a>
 {{/if}}
-
-
