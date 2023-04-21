@@ -1,6 +1,6 @@
 {{#each studytips as |studytip|}}
 <div>
-  <h2>{{studytip.tip}}</h2>
+  <h3>{{studytip.tip}}</h3>
 <a href="{{studytip.link}}">{{studytip.link}}</a>
 
   {{#if photo}}
@@ -13,3 +13,8 @@
     <video src="{{studytip.video}}" alt="Video"></video>
   {{/if}}
 </div>
+{{/each}}
+
+<script src="./js/study.js"></script>
+
+
