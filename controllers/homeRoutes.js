@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             include: [{ model: Memes }, { model: Chat }, { model: Study }]
         });
         const users = userData.map((user) => user.get({ plain: true }));
-        res.render('homepage', { users });
+        res.render('layouts/main', { users });
     } catch (err) {
         res.status(500).json(err);
     }
