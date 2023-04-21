@@ -6,6 +6,7 @@ const mediaSelect = document.querySelector('#media');
 const mediaInput = document.querySelector('#media-input');
 const mediaFileInput = document.querySelector('#media_file');
 const chats = document.querySelectorAll('.chat-details');
+const submit = document.querySelectorAll('button');
 
 // Add event listener to hide/show the media input field
 mediaSelect.addEventListener('change', () => {
@@ -16,3 +17,27 @@ mediaSelect.addEventListener('change', () => {
   }
 });
 
+// Add event listener to submit a new chat
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const response = await fetch('/api/chats', {
+        method: 'POST',
+        body: JSON.stringify(newChat),
+        headers: { 'Content-Type': 'application/json' },
+    })
+''
+    const newChat =
+    {
+        user_name: userNameInput.value,
+        message: messageInput.value,
+        media: mediaSelect.value,
+        media_file: mediaFileInput.value
+        };
+ 
+    if (response.ok) {
+        document.location.replace('/chat');
+    } else {
+        alert('Failed to create a new chat.');
+    }
+});
