@@ -1,6 +1,41 @@
 
 {{#if loggedIn}}
 <div class= "chat">
+  {{#each chat as |chat|}}
+  {{#if chat.fromUser}}
+    <section class="userChat">
+      {{#if photo}}
+        <img src="/images/{{chat.photo}}" alt="Photo">
+      {{/if}}
+      {{#if gif}}
+        <img src="/images/{{chat.gif}}" alt="GIF">
+      {{/if}}
+      {{#if video}}
+        <video src="/videos/{{chat.video}}" controls></video>
+      {{/if}}
+      <div class="chat-details">
+        <h3>{{chat.user_name}}</h3>
+        <p>{{chat.message}}</p>
+      </div>
+    </section>
+  {{else}}
+   <section class="chat">
+      {{#if photo}}
+        <img src="/images/{{chat.photo}}" alt="Photo">
+      {{/if}}
+      {{#if gif}}
+        <img src="/images/{{chat.gif}}" alt="GIF">
+      {{/if}}
+      {{#if video}}
+        <video src="/videos/{{chat.video}}" controls></video>
+      {{/if}}
+      <div class="chat-details">
+        <h3>{{chat.user_name}}</h3>
+        <p>{{chat.message}}</p>
+      </div>
+    </section>
+  {{/each}}
+   </div>
   <form action="/chat" method="POST">
     <label for="user_name">Username:</label>
     <input type="text" id="user_name" name="user_name">
@@ -19,34 +54,8 @@
     </div>
     <button type="submit">Send</button>
   </form>
-  {{#each chats as |chat|}}
-    <section class="chat">
-      {{#if photo}}
-        <img src="/images/{{chat.photo}}" alt="Photo">
-      {{/if}}
-      {{#if gif}}
-        <img src="/images/{{chat.gif}}" alt="GIF">
-      {{/if}}
-      {{#if video}}
-        <video src="/videos/{{chat.video}}" controls></video>
-      {{/if}}
-      <div class="chat-details">
-        <h3>{{chat.user_name}}</h3>
-        <p>{{chat.message}}</p>
-      </div>
-    </section>
-  {{/each}}
-   </div>
-{{else}}
+  {{else}}
   <a href="/login">You must login first to view this page</a>
 {{/if}}
 
 
-{{#each Users as user}}
-{{#if chat}}
-<div class="container">
-  {{!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> --}}
-  <p>Hello. How are you today?</p>
-  <span> ##add time </span>
-</div>
-{{/each}}
