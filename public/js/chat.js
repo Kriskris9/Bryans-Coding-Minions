@@ -17,19 +17,27 @@ mediaSelect.addEventListener('change', () => {
   }
 });
 
-// Add an event listener to submit a new chat
+// Add event listener to submit a new chat
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
-
-    const user = userNameInput.value
-    const message = messageInput.value
-    const media = mediaInput.value
-    const mediaFile = mediaFileInput.files[0]
-    chats = {
-        user,
-        message,
-        media,
-        mediaFile
+    
+    const response = await fetch('/api/chats', {
+        method: 'POST',
+        body: JSON.stringify(newChat),
+        headers: { 'Content-Type': 'application/json' },
+    })
+''
+    const newChat =
+    {
+        user_name: userNameInput.value,
+        message: messageInput.value,
+        media: mediaSelect.value,
+        media_file: mediaFileInput.value
+        };
+ 
+    if (response.ok) {
+        document.location.replace('/chat');
+    } else {
+        alert('Failed to create a new chat.');
     }
 });
-
