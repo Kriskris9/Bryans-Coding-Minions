@@ -1,6 +1,6 @@
-<h1>Networking Events</h1>
+<h2>Networking Events</h2>
 
-<ul>
+{{#if loggedIn}}
   {{#each events as |event|}}
     <li>
       <p><strong>{{event.event_name}}</strong></p>
@@ -12,7 +12,11 @@
       {{/if}}
     </li>
   {{/each}}
-</ul>
+{{else}}
+  <a href="/login">You must login first to view this page</a>
+{{/if}}
+
+
 
 
 
