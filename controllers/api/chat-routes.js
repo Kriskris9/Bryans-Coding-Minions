@@ -36,6 +36,7 @@ router.post('/', async (req, res) => {
             video: req.body.video,
             fromUser: true,
         });
+        console.log(chatData);
         res.status(200).json(chatData);
         console.log(chatData);
     } catch (err) {

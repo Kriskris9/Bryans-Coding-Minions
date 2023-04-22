@@ -14,7 +14,7 @@ Chat.init(
         },
         user_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         message: {
             type: DataTypes.STRING,

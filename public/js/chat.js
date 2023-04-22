@@ -1,3 +1,4 @@
+// const cloudinary = require('cloudinary').v2;
 // Define variables
 const form = document.querySelector('form');
 const userNameInput = document.querySelector('#user_name');
@@ -7,6 +8,11 @@ const mediaInput = document.querySelector('#media-input');
 const mediaFileInput = document.querySelector('#media_file');
 const chats = document.querySelectorAll('.chat-details');
 const submit = document.querySelectorAll('button');
+const none = document.querySelector('#none');
+const image = document.querySelector('#image');
+const gif = document.querySelector('#gif');
+const video = document.querySelector('#video');
+
 
 // Add event listener to hide/show the media input field
 mediaSelect.addEventListener('change', () => {
@@ -20,20 +26,34 @@ mediaSelect.addEventListener('change', () => {
 // Add event listener to submit a new chat
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const newChat =
+
+    cloudinary.url(mediaFileInput.value, {width: 200, height: 200, crop: 'fill', fetch_format});
+    // function cloud(media) {cloudinary.v2.uploader.upload(media)
+    // .then((result) => {result=>console.log(result);});}
+
+    // cloud(mediaInput.value);
+
+    const newChat = 
     {
-        user_name: userNameInput.value,
+        // user_name: userNameInput.value,
+        user_name: "jack",
         message: messageInput.value,
-        media: mediaSelect.value,
-        media_file: mediaFileInput.value
+        photo: mediaFileInput.value,
+        gif: null,
+        video: null
+        // media: mediaSelect.value,
+        // media_file: mediaFileInput.value
         };
-    const response = await fetch('/api/chats', {
-        method: 'POST',
-        body: JSON.stringify(newChat),
-        headers: { 'Content-Type': 'application/json' },
-    })
-''
+        console.log(newChat);
     
+    const response = await fetch('api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(newChat),
+    })
+    // .then((response) => response.json());
+  
+
  
     if (response.ok) {
         document.location.replace('/chat');
