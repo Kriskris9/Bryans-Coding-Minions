@@ -1,0 +1,44 @@
+<h2>Networking Events</h2>
+
+{{#if loggedIn}}
+  {{#each events as |event|}}
+    <li>
+      <p><strong>{{event.event_name}}</strong></p>
+      <p>{{event.location}}</p>
+      <p>{{event.date}}</p>
+      <a href="{{event.link}}">Event Link</a>
+      {{#if event.photo}}
+        <img src="{{event.photo}}" alt="{{event.event_name}} Photo">
+      {{/if}}
+    </li>
+  {{/each}}
+
+<form action="/networking" method="POST">
+    <label for="event_name">Event Name:</label>
+    <input type="text" id="event_name" name="event_name">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+    <label for="link">Link:</label>
+    <input type="text" id="link" name="link">
+    <label for="media">Media:</label>
+    <select id="media" name="media">
+      <option class= "none" value="none">None</option>
+      <option class= "image" value="image">Image</option>
+    </select>
+    <div id="media-input">
+      <label for="media_file">File:</label>
+      <input type="file" id="media_file" name="media_file">
+    </div>
+    <button type="submit"> Post A Networking Event </button>
+  </form>
+
+{{else}}
+  <a href="/login">You must login first to view this page</a>
+{{/if}}
+
+
+<script src="./js/networking.js"></script> 
+
+

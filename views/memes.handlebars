@@ -1,0 +1,50 @@
+<h2> Memes</h2>
+{{!-- Added if statement so that you must be logged in to view Memes --}}
+{{#if loggedIn}}
+
+{{#each memes as |meme|}}
+<div class="meme">
+  <h3>{{meme.title}}</h3>
+  <p>{{meme.description}}</p>
+{{#if meme.photo}}
+        <img src="/images/{{meme.photo}}" alt="Photo">
+      {{/if}}
+ {{#if meme.gif}}
+        <img src="/images/{{meme.gif}}" alt="GIF">
+      {{/if}}
+{{#if meme.video}}
+        <video src="/videos/{{meme.video}}" alt="video"></video>
+      {{/if}}   
+  <a href="{{meme.link}}">{{meme.link}}</a>
+</div>
+{{/each}}
+
+
+<form action="/memes" method="POST">
+    <label for="meme_title">Title:</label>
+    <input type="text" id=""meme_title" name="meme_title">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description">
+    <label for="media">Media:</label>
+    <option id="media" name="media">
+      <option class= "none" value="none">None</option>
+      <option class= "image" value="image">Image</option>
+      <option class= "gif" value="gif">GIF</option>
+      <option class= "video" value="video">Video</option>
+      <option class= "link" value="link">Link</option>
+    </select>
+    <div id="media-input">
+      <label for="media_file">File:</label>
+      <input type="file" id="media_file" name="media_file">
+    </div>
+    <button type="submit"> Post Meme </button>
+  </form>
+
+{{else}}
+
+  <a href="/login">You must login first to view this page</a>
+{{/if}}
+
+
+<script src="./js/memes.js"></script>
+

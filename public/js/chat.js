@@ -26,6 +26,7 @@ mediaSelect.addEventListener('change', () => {
 // Add event listener to submit a new chat
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
+
     cloudinary.url(mediaFileInput.value, {width: 200, height: 200, crop: 'fill', fetch_format});
     // function cloud(media) {cloudinary.v2.uploader.upload(media)
     // .then((result) => {result=>console.log(result);});}
@@ -52,6 +53,7 @@ form.addEventListener('submit', async (event) => {
     })
     // .then((response) => response.json());
   
+
  
     if (response.ok) {
         document.location.replace('/chat');
@@ -59,3 +61,4 @@ form.addEventListener('submit', async (event) => {
         alert('Failed to create a new chat.');
     }
 });
+
