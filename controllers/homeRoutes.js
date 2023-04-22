@@ -57,8 +57,9 @@ router.get('/chat',  async (req, res) => {
         const chatData = await Chat.findAll({
             include: [{ model: User }]
         });
-        const chat = chatData.map((chat) => chat.get({ plain: true }));
-        res.render('chat', { chat });
+        const chats = chatData.map((chat) => chat.get({ plain: true }));
+        // res.json(chats);
+        res.render('chat', { chats });
     } catch (err) {
         res.status(500).json(err);
     }

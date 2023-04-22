@@ -1,17 +1,17 @@
 
-{{#if loggedIn}}
+{{!-- {{#if loggedIn}} --}}
 <div class= "chat">
-  {{#each chat as |chat|}}
+  {{#each chats as |chat|}}
   {{#if chat.fromUser}}
     <section class="userChat">
       {{#if photo}}
-        <img src="/images/{{chat.photo}}" alt="Photo">
+        <img src="{{chat.photo}}" alt="Photo">
       {{/if}}
       {{#if gif}}
-        <img src="/images/{{chat.gif}}" alt="GIF">
+        <img src="{{chat.gif}}" alt="GIF">
       {{/if}}
       {{#if video}}
-        <video src="/videos/{{chat.video}}" controls></video>
+        <video src="{{chat.video}}" controls></video>
       {{/if}}
       <div class="chat-details">
         <h3>{{chat.user_name}}</h3>
@@ -21,32 +21,32 @@
   {{else}}
    <section class="chat">
       {{#if photo}}
-        <img src="/images/{{chat.photo}}" alt="Photo">
+        <img src="{{chat.photo}}" alt="Photo">
       {{/if}}
       {{#if gif}}
-        <img src="/images/{{chat.gif}}" alt="GIF">
+        <img src="{{chat.gif}}" alt="GIF">
       {{/if}}
       {{#if video}}
-        <video src="/videos/{{chat.video}}" controls></video>
+        <video src="{{chat.video}}" controls></video>
       {{/if}}
       <div class="chat-details">
         <h3>{{chat.user_name}}</h3>
         <p>{{chat.message}}</p>
       </div>
     </section>
+    {{/if}}
   {{/each}}
    </div>
+   <div>
   <form action="/chat" method="POST">
-    <label for="user_name">Username:</label>
-    <input type="text" id="user_name" name="user_name">
     <label for="message">Message:</label>
     <input type="text" id="message" name="message">
     <label for="media">Media:</label>
     <select id="media" name="media">
-      <option value="none">None</option>
-      <option value="image">Image</option>
-      <option value="gif">GIF</option>
-      <option value="video">Video</option>
+      <option class="none" value="none">None</option>
+      <option class="image" value="image">Image</option>
+      <option class="gif" value="gif">GIF</option>
+      <option class ="video" value="video">Video</option>
     </select>
     <div id="media-input">
       <label for="media_file">File:</label>
@@ -54,8 +54,10 @@
     </div>
     <button type="submit">Send</button>
   </form>
-  {{else}}
+  </div>
+  <script type="text/javascript" src="./js/chat.js"></script>
+  {{!-- {{else}}
   <a href="/login">You must login first to view this page</a>
-{{/if}}
+{{/if}} --}}
 
 
