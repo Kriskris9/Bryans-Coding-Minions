@@ -2,16 +2,18 @@
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
     
+
+    const studyTip =
+    {
+      
+        };
+
     const response = await fetch('/api/study', {
         method: 'POST',
         body: JSON.stringify(studyTip),
         headers: { 'Content-Type': 'application/json' },
     })
 
-    const studyTip =
-    {
-      
-        };
 
  
     if (response.ok) {
