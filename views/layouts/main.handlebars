@@ -11,28 +11,37 @@
 
 <body>
   <header>
-    <h1> Brian's Coding Minion's </h1>
+    <h1> Brian's Coding Minions </h1>
   </header>
   <nav>
     <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
     <a href="/login">Login</a>
-    {{/if}}
-    <a href="/chat">chat</a>
-  </nav>
+    <a href="/study">Study</a>
+   <a href="/chat">Chat</a>
+    <a href="/memes">Memes</a>
+    <a href="/networking">Networking</a>
+
+
+ <button id="logout" class="btn-no-style">Logout</button>
+
+</nav>
+
+<img src="../../public/images/screen_shot_2023-04-17_at_11.12.16_am_360.png"> 
+
+<p> Welcome to our class bootcamp hub! Let's stay connected.</p>
+
+{{#if loggedIn}}
   <main>
     <div class="container">
     {{{body}}}
     </div>
   </main>
+  {{/if}}
   <footer>
     <p> &copy; 2023 Brian's Coding Minion's </p>
   </footer>
-  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
-  {{/if}}
+
 </body>
 
 </html>
