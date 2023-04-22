@@ -17,8 +17,8 @@ form.addEventListener('submit', async (event) => {
         title: tipTitle.value,
         link: linkInput.value,
         photo: photoInput.value,
-        gif: gifInput,
-        video: videoInput
+        gif: gifInput.value,
+        video: videoInput.value
         };
 
         const response = await fetch('/api/study', {
