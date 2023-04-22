@@ -4,12 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
   <title>Brian's Coders</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
+  <div class="home-page">
   <header>
     <h1> Brian's Coding Minion's </h1>
   </header>
@@ -20,13 +24,14 @@
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
-    <a href="/chat">chat</a>
+    <a href="/chat">Chat</a>
   </nav>
   <main>
     <div class="container">
     {{{body}}}
     </div>
   </main>
+  </div>
   <footer>
     <p> &copy; 2023 Brian's Coding Minion's </p>
   </footer>
