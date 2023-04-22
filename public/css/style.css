@@ -1,0 +1,87 @@
+.home-page {
+    padding-top: 70px;
+}
+body {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+    background: linear-gradient(to bottom, #232526, #414345);
+    background-attachment: fixed;
+
+}
+header {
+
+}
+nav {
+    font-size: 30px;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: white;
+    border: 2px solid #f64c72;
+    padding: 5px;
+    background-color: #f64c72;
+    transition: all .2s ease-in-out; 
+    font-family: 'PT Mono', monospace;
+}
+a:hover{
+    padding: 7px; 
+    background-color:#f62d58 ;
+}
+a:visited {
+    text-decoration: none;
+}
+footer {
+     position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2f2fa2;
+    color: white;
+    text-align: center;
+  }
+
+
+
+
+
+/* login.handlebars */
+.main {
+    
+}
+.title {
+    padding-top: 2%;
+}
+.form-input {
+    padding-top: 2px;
+}
+button {
+    background-color: #f64c72;
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
+    transition: all 0.2s ease-in-out;
+    padding: 5px;
+    font-size: 15px;
+}
+button:hover {
+    background-color: #f62d58;
+    transform: scale(1.1); 
+}
+.field {
+    padding-top: 1%;
+}
+
+.wrapper {
+    border: 2px solid white;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+input:hover {
+    padding: 3px;
+}
