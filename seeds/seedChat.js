@@ -3,6 +3,7 @@ const {Chat}= require('../models');
 
 
 const chatSeedData = [
+  // first one and coder 4 seed data
   {
     "user_name": "coder1",
     "message": "Why do Java developers wear glasses? Because they don't C#!",

@@ -1,4 +1,8 @@
+<h2> Study Tips/ Resources</h2>
+
 {{#each studytips as |studytip|}}
+
+{{#if loggedIn}}
 <div>
   <h3>{{studytip.tip}}</h3>
 <a href="{{studytip.link}}">{{studytip.link}}</a>
@@ -14,6 +18,33 @@
   {{/if}}
 </div>
 {{/each}}
+
+
+
+<form action="/study" method="POST">
+    <label for="tip">Study Tip:</label>
+    <input type="text" id="study_tip" name="study_tip">
+    <label for="media">Media:</label>
+    <option id="media" name="media">
+      <option class= "none" value="none">None</option>
+      <option class= "image" value="image">Image</option>
+      <option class= "gif" value="gif">GIF</option>
+      <option class= "video" value="video">Video</option>
+      <option class= "link" value="link">Link</option>
+    </select>
+    <div id="media-input">
+      <label for="media_file">File:</label>
+      <input type="file" id="media_file" name="media_file">
+    </div>
+    <button type="submit"> Post Study Tip </button>
+  </form>
+
+
+{{else}}
+
+  <a href="/login">You must login first to view this page</a>
+{{/if}}
+
 
 <script src="./js/study.js"></script>
 
