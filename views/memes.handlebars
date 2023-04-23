@@ -1,6 +1,6 @@
 <h2> Memes</h2>
 {{!-- Added if statement so that you must be logged in to view Memes --}}
-{{#if loggedIn}}
+{{!-- {{#if loggedIn}} --}}
 
 {{#each memes as |meme|}}
 <div class="meme">
@@ -39,12 +39,12 @@
     </div>
     <button type="submit"> Post Meme </button>
   </form>
-
+{{!-- 
 {{else}}
 
   <a href="/login">You must login first to view this page</a>
 {{/if}}
-
+ --}}
 
 <script src="./js/memes.js"></script>
 
