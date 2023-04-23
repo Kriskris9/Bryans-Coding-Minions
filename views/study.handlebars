@@ -1,8 +1,8 @@
+{{#if loggedIn}}
+
 <h2> Study Tips/ Resources</h2>
 
 {{#each studytips as |studytip|}}
-
-{{#if loggedIn}}
 <div>
   <h3>{{studytip.tip}}</h3>
 <a href="{{studytip.link}}">{{studytip.link}}</a>

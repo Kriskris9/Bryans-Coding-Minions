@@ -1,23 +1,30 @@
 const router = require('express').Router();
-const {Study} = require('../../models');
+const { Study, User } = require('../../models');
 
-//get all study tips
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
   try {
     const studyTips = await Study.findAll();
-    res.json(studyTips);
+    res.render('study', { studyTips });
+    console.log(studyTips);
   } catch (err) {
-    next(err);
+    res.status(500).json(err);
   }
 });
 
-//get one study tip
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', async (req, res) => {
   try {
-    const studyTip = await Study.findByPk(req.params.id);
-    res.json(studyTip);
-  } catch (err) {
-    next(err);
+    const studyTip = await Study.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        { model: User, attributes: ['user_name'] }
+      ]
+    });
+    res.status(200).json(studyTip);
+    console.log(studyTip);
+  } catch (err) { 
+    res.status(500).json(err);
   }
 });
 
@@ -34,11 +41,12 @@ router.post('/', async (req, res, next) => {
 //update a study tip
 router.put('/:id', async (req, res, next) => {
   try {
-    const updatedStudyTip = await Study.update(req.body, {
+    await Study.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
+    const updatedStudyTip = await Study.findByPk(req.params.id);
     res.json(updatedStudyTip);
   } catch (err) {
     next(err);
