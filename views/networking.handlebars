@@ -1,6 +1,6 @@
 <h2>Networking Events</h2>
 
-{{#if loggedIn}}
+{{!-- {{#if loggedIn}} --}}
   {{#each events as |event|}}
     <li>
       <p><strong>{{event.event_name}}</strong></p>
@@ -34,9 +34,9 @@
     <button type="submit"> Post A Networking Event </button>
   </form>
 
-{{else}}
+{{!-- {{else}}
   <a href="/login">You must login first to view this page</a>
-{{/if}}
+{{/if}} --}}
 
 
 <script src="./js/networking.js"></script> 
