@@ -5,18 +5,17 @@ const { Networking, User } = require('../../models');
 // this is a test afdsfadfsd
 
 
+
 router.get('/', async (req, res) => {
-  //find all networking events
-  //include the associated user data
   try {
-    const networkingData = await Networking.findAll({
-      include: [{ model: User }]
-    });
-    res.status(200).json(networkingData);
+      const networkingData = await Networking.findAll();
+      res.render('networking', { networkingData }); 
+      res.status(200).json(networkingData);
+      console.log(networkingData);
   } catch (err) {
-    res.status(500).json(err);
-  }
-});
+      res.status(500).json(err);
+}});
+
 
 router.post('/', async (req, res) => {
   // create a new networkingEvent
