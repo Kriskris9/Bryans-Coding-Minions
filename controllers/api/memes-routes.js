@@ -11,12 +11,29 @@ router.get('/', async (req, res) => {
     const memesData = await Memes.findAll({
       include: [{ model: User }]
     });
+    res.render('memes', { memesData })
+    
     res.status(200).json(memesData);
     res.render('memes', {memesData});
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
+
+
+router.get('/', async (req, res) => {
+  try {
+    const studyTips = await Study.findAll();
+    include : [{ model: User, attributes: ['user_name'] }]
+    res.render('study', { studyTips });
+    console.log(studyTips);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.post('/', async (req, res) => {
   // create a new meme

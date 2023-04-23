@@ -1,0 +1,274 @@
+.home-page {
+    padding-top: 70px;
+}
+body {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+    background: linear-gradient(to bottom, #232526, #414345);
+    background-attachment: fixed;
+
+}
+h1 {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 2%;
+  }
+h2 {
+    font-family: 'Pathway Extreme', sans-serif;
+    font-size: 20px;
+    
+}
+nav {
+    font-size: 30px;
+    color: white;
+    margin-top: 2%;
+}
+a {
+    text-decoration: none;
+    color: white;
+    border: 2px solid #f64c72;
+    padding: 5px;
+    background-color: #f64c72;
+    transition: all .2s ease-in-out; 
+    font-family: 'PT Mono', monospace;
+}
+a:hover{
+    padding: 7px; 
+    background-color:#f62d58 ;
+}
+a:visited {
+    text-decoration: none;
+}
+footer {
+     position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2f2fa2;
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+
+
+
+
+/* login.handlebars */
+.main {
+    
+}
+.title {
+    padding-top: 2%;
+}
+.form-input {
+    padding-top: 2px;
+}
+button {
+    background-color: #f64c72;
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
+    transition: all 0.2s ease-in-out;
+    padding: 5px;
+    font-size: 15px;
+}
+button:hover {
+    background-color: #f62d58;
+    transform: scale(1.1); 
+}
+.field {
+    padding-top: 1%;
+}
+
+.wrapper {
+    border: 2px solid white;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+    margin-top: 2%;
+    padding-bottom: 2%;
+}
+input:hover {
+    padding: 3px;
+}
+
+
+
+.message-box {
+    border: 2px solid white;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: cornflowerblue; 
+}
+#chat-box {
+    font-size: 30px;
+}
+.dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #4e54c8;
+    border-radius: 50%;
+    box-shadow: 3px 3px 1px gray;
+    margin-right: 5px;
+
+}
+#flex-end {
+    padding-top: 30%;
+}
+
+input {
+    border: none;
+    padding:5px 10px;
+}
+select {
+    padding: 2px 5px;
+    border: none;
+    font-size: 15px;
+    background-color: #4e54c8;
+}
+
+
+/* chat handlebars */
+.meme {
+    border: 2px solid white;
+}
+
+/* background */
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.area{
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
