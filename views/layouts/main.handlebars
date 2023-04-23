@@ -29,26 +29,27 @@
     </ul> --}}
 
 
+  <div class="home-page">
+  <header>
+    <h1> Brian's Coding Minion's </h1>
+  </header>
+  <nav>
+    <a href="/">Home</a> 
+    <a href="/chat">Chat</a>
+    <a href="/networking">Networking</a>
+    <a href="/study">Study</a>
+    <a href="/memes">Funny Memes</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+   
+  </nav>
+  <main>
+    <div class="container">
+    {{{body}}}
 
-    <div class="home-page">
-      <header>
-        <h1> Brian's Coding Minions </h1>
-        <h2> Welcome minions to the digital land of coding <br>
-          interaction and fun! Here, you can chat with classmates, <br>
-          see memes, and see networking events! </h2>
-      </header>
-      <nav>
-        <a href="/">Home</a>
-        {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-        <a href="/chat">Chat</a>
-      </nav>
-      <main class="container">
-        {{{body}}}
-      </main>
     </div>
   {{!-- </div> --}}
   <footer>
