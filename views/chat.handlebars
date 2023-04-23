@@ -5,6 +5,10 @@
   {{#each chats as |chat|}}
   {{#if chat.fromUser}}
     <section class="userChat">
+      <div class="chat-details">
+        <h3>{{chat.user_name}}</h3>
+        <p>{{chat.message}}</p>
+      </div>
       {{#if photo}}
         <img src="{{chat.photo}}" alt="Photo">
       {{/if}}
@@ -14,13 +18,13 @@
       {{#if video}}
         <video src="{{chat.video}}" controls></video>
       {{/if}}
-      <div class="chat-details">
-        <h3>{{chat.user_name}}</h3>
-        <p>{{chat.message}}</p>
-      </div>
     </section>
   {{else}}
    <section class="chat">
+      <div class="chat-details">
+        <h3>{{chat.user_name}}</h3>
+        <p>{{chat.message}}</p>
+      </div>
       {{#if photo}}
         <img src="{{chat.photo}}" alt="Photo">
       {{/if}}
@@ -30,10 +34,6 @@
       {{#if video}}
         <video src="{{chat.video}}" controls></video>
       {{/if}}
-      <div class="chat-details">
-        <h3>{{chat.user_name}}</h3>
-        <p>{{chat.message}}</p>
-      </div>
     </section>
     {{/if}}
   {{/each}}
@@ -55,32 +55,41 @@
 <div id="flex-end">
     <label for="message">Message:</label>
     <input type="text" id="message" name="message">
-    <label for="media">Media:</label>
-    <select id="media" name="media">
-      <option class="none" value="none">None</option>
-      <option class="image" value="image">Image</option>
-      <option class="gif" value="gif">GIF</option>
-      <option class ="video" value="video">Video</option>
-    </select>
-    <div id="media-input">
-      <label for="media_file">File:</label>
-      <input type="file" id="media_file" name="media_file">
-    </div>
     <button type="submit">Send</button>
     </form>
   </div>
 
   </div>
   </div>
-  <script type="text/javascript" src="./js/chat.js"></script>
   <button id="upload_widget" class="cloudinary-button">Upload files</button>
-  <value id="link" value=""></value>
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
-<script type="text/javascript">  
-let value = document.getElementById("link");
+{{!-- <script type="text/javascript">  
+
+
+</script> --}}
+  {{!-- {{else}}
+
+  <a href="/login">You must login first to view this page</a>
+{{/if}} --}}
+
+<script type="text/javascript">
+
 let link = "";
+const form = document.querySelector('form');
+const userNameInput = document.querySelector('#user_name');
+const messageInput = document.querySelector('#message');
+const mediaSelect = document.querySelector('#media');
+const mediaInput = document.querySelector('#media-input');
+const mediaFileInput = document.querySelector('#media_file');
+const chats = document.querySelectorAll('.chat-details');
+const submit = document.querySelectorAll('button');
+const none = document.querySelector('#none');
+const image = document.querySelector('#image');
+const gif = document.querySelector('#gif');
+const video = document.querySelector('#video');
+
 var myWidget = cloudinary.createUploadWidget({
   cloudName: 'dtbznjxtz', 
   uploadPreset: 'bni2efmk'}, (error, result) => { 
@@ -91,16 +100,51 @@ var myWidget = cloudinary.createUploadWidget({
       return link;
     }
   }
-)
+);
 
 document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
-    value.innerHTML = myWidget;
   }, false);
 
+// Add event listener to hide/show the media input field
+mediaSelect.addEventListener('change', () => {
+  if (mediaSelect.value === 'none') {
+    mediaInput.style.display = 'none';
+  } else {
+    mediaInput.style.display = 'block';
+  }
+});
+
+// Add event listener to submit a new chat
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    console.log(mediaFileInput.value);
+
+
+    const newChat = 
+    {
+        user_name: "jack",
+        message: messageInput.value,
+        photo: link,
+        gif: null,
+        video: null
+        };
+        console.log(newChat);
+    
+    const response = await fetch('api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(newChat),
+    })
+
+ 
+    if (response.ok) {
+        document.location.replace('/chat');
+    } else {
+        alert('Failed to create a new chat.');
+    }
+});
+
+
 </script>
-  {{!-- {{else}}
-
-  <a href="/login">You must login first to view this page</a>
-{{/if}} --}}
-

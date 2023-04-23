@@ -25,23 +25,23 @@ Memes.init(
         },
     gif: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     video: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     link: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
-    user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'user',
-            key: 'id',
-        },
-    }
+    // user_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'user',
+    //         key: 'id',
+    //     },
+    // }
   },
 
 
