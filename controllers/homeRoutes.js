@@ -15,13 +15,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/study', withAuth, async (req, res) => {
+router.get('/study', async (req, res) => {
     try {
         const studyData = await Study.findAll({
             include: [{ model: User }]
         });
         const study = studyData.map((study) => study.get({ plain: true }));
-        res.render('study', { study });
+        res.render('study', { studyData });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -34,13 +34,13 @@ router.get('/memes', async (req, res) => {
             include: [{ model: User }]
         });
         const memes = memesData.map((meme) => meme.get({ plain: true }));
-        res.render('memes', { memes });
+        res.render('memes', { memes});
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/networking', withAuth, async (req, res) => {
+router.get('/networking', async (req, res) => {
     try {
         const networkingData = await Networking.findAll({
             include: [{ model: User }]
