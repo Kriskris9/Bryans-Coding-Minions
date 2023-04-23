@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
       include: [{ model: User }]
     });
     res.status(200).json(memesData);
+    res.render('memes', {memesData});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -20,11 +21,20 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new meme
   try {
-    const memeData = await Memes.create(req.body);
+    const memeData = await Memes.create({
+      title: req.body.title,
+      description: req.body.description,
+      photo: req.body.photo,
+      gif: req.body.gif,
+      video: req.body.video,
+      link: req.body.link,
+      // user_id: req.user_id,
+  });
+  console.log(memeData);
     res.status(200).json(memeData);
   } catch (err) {
     res.status(400).json(err);
-  };
+  }
 });
 
 router.delete('/:id', async (req, res) => {

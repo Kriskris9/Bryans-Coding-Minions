@@ -5,6 +5,25 @@
 //   cloud_name: "dtbznjxtz",
 // });
 // Define variables
+let value = document.getElementById("link");
+let link = "";
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dtbznjxtz', 
+  uploadPreset: 'bni2efmk'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info.url);
+      link = result.info.url;
+      console.log(link);
+      return link;
+    }
+  }
+);
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+    value.innerHTML = myWidget;
+  }, false);
+
 const form = document.querySelector('form');
 const userNameInput = document.querySelector('#user_name');
 const messageInput = document.querySelector('#message');
@@ -17,7 +36,7 @@ const none = document.querySelector('#none');
 const image = document.querySelector('#image');
 const gif = document.querySelector('#gif');
 const video = document.querySelector('#video');
-const value = document.getElementById("link");
+
 
 
 // if a media file was selected, read the file and set the media_file property of the new chat object to the base64-encoded data URL of the file
@@ -65,15 +84,15 @@ form.addEventListener('submit', async (event) => {
     // console.log(url);
     // const imageUrl = await cloudinary.url(mediaFileInput.value);
     // console.log(imageUrl);
-    const link = value.innerHTML;
-    console.log(link);
+   
 
     const newChat = 
     {
         // user_name: userNameInput.value,
         user_name: "jack",
         message: messageInput.value,
-        photo: "http://res.cloudinary.com/dov0ohe0b/image/upload/v1682190412/rizq8fiimfkhdplyvnks.jpg",
+        // photo: "http://res.cloudinary.com/dov0ohe0b/image/upload/v1682190412/rizq8fiimfkhdplyvnks.jpg",
+        photo: link,
         gif: null,
         video: null
         // media: mediaSelect.value,
