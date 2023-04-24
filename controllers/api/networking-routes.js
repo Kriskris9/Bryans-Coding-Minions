@@ -27,6 +27,23 @@ router.post('/', async (req, res) => {
   };
 });
 
+router.post('/', async (req, res) => {
+    try{
+        const networkingData = await Networking.create({
+            location: req.body.location,
+            event_name: req.body.event_name,
+            date: req.body.date,
+            photo: req.body.photo,
+        });
+
+        console.log(networkingData);
+        res.status(200).json(networkingData);
+        console.log(networkingData);
+    } catch (err) {
+        res.status(400).json(err);
+}});
+
+
 router.delete('/:id', async (req, res) => {
   //delete a networking event by its id value
   try {

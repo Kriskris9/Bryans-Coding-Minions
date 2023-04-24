@@ -7,14 +7,11 @@ const eventdateInput = document.querySelector('#date');
 const eventphotoinput = document.querySelector('#photo');
 const submit = document.querySelectorAll('button');
 
-// const networkingEvent = {
-//     name: input.value,
-// };
-
 
 // Add event listener to submit a new chat
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    
     const networkingEvent =
     {   
         name: eventnameInput.value,
@@ -36,3 +33,4 @@ form.addEventListener('submit', async (event) => {
         alert('Failed to create a new networking event.');
     }
 });
+
