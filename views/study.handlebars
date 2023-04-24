@@ -11,13 +11,12 @@
 
 
 
-<form id = "form">
+<form id="form">
     <label for="tip">Study Tip:</label>
     <input type="text" id="tip" name="tip">
     <label for="link">Link:</label>
     <input type="text" id="link" name="link">
     <button type="submit"> Post Study Tip </button>
-  
   </form>
 
 
@@ -34,10 +33,7 @@
 const form = document.querySelector('#form');
 const tipTitle = document.querySelector('#tip');
 {{!-- const linkInput = document.querySelector('#link');
-const photoInput = document.querySelector('#photo');
-const gifInput = document.querySelectorAll('#gif');
-const videoInput = document.querySelector('#video'); --}}
-console.log(tipTitle);
+--}}
 
 var myWidget = cloudinary.createUploadWidget({
   cloudName: 'dtbznjxtz', 
@@ -51,9 +47,9 @@ var myWidget = cloudinary.createUploadWidget({
   }
 );
 
-document.getElementById("upload_widget").addEventListener("click", function(){
+{{!-- document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
-  }, false);
+  }, false); --}}
 
 // Add event listener to submit a new study tip
 form.addEventListener('submit', async (event) => {
