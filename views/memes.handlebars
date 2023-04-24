@@ -7,13 +7,13 @@
   <h3>{{meme.title}}</h3>
   <p>{{meme.description}}</p>
 {{#if meme.photo}}
-        <img src="/images/{{meme.photo}}" alt="Photo">
+        <img src="{{meme.photo}}" alt="Photo">
       {{/if}}
  {{#if meme.gif}}
-        <img src="/images/{{meme.gif}}" alt="GIF">
+        <img src="{{meme.gif}}" alt="GIF">
       {{/if}}
 {{#if meme.video}}
-        <video src="/videos/{{meme.video}}" alt="video"></video>
+        <video src="{{meme.video}}" alt="video"></video>
       {{/if}}   
   <a href="{{meme.link}}">{{meme.link}}</a>
 </div>
@@ -80,10 +80,10 @@ document.getElementById("upload_widget").addEventListener("click", function(){
       const newMeme = {
           title: memeTitle.value,
           description: memeDescription.value,
-          photo: null,
+          photo: link,
           gif: null,
           video: null,
-          link: null,
+          link: link,
           user_id: 1,
       };
       console.log(newMeme);
@@ -92,6 +92,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
           headers: { 'Content-Type': 'application/json', },
           body: JSON.stringify(newMeme),
       })
+      console.log(response);
   
       if (response.ok) {
           document.location.replace('/memes');
