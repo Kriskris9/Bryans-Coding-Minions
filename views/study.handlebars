@@ -2,19 +2,19 @@
 
 <h2> Study Tips/ Resources</h2>
 
-{{#each studytips as |studytip|}}
+{{#each study as |study|}}
 <div>
-  <h3>{{studytip.tip}}</h3>
-<a href="{{studytip.link}}">{{studytip.link}}</a>
+  <h3>{{study.tip}}</h3>
+<a href="{{study.link}}">{{study.link}}</a>
 
-  {{#if studytip.photo}}
-    <img src="{{studytip.photo}}" alt="Photo">
+  {{#if study.photo}}
+    <img src="{{study.photo}}" alt="Photo">
   {{/if}}
-  {{#if studytip.gif}}
-    <img src="{{studytip.gif}}" alt="GIF">
+  {{#if study.gif}}
+    <img src="{{study.gif}}" alt="GIF">
   {{/if}}
-  {{#if studytip.video}}
-    <video src="{{studytip.video}}" alt="Video"></video>
+  {{#if study.video}}
+    <video src="{{study.video}}" alt="Video"></video>
   {{/if}}
 </div>
 {{/each}}

@@ -40,15 +40,15 @@
 //         video: memeVideo.value,
 //     }
 // ​
-    const response = await fetch('/api/memes', {
-        method: 'POST',
-        body: JSON.stringify(newMeme),
-        headers: { 'Content-Type': 'application/json' },
-    })
+//     const response = await fetch('/api/memes', {
+//         method: 'POST',
+//         body: JSON.stringify(newMeme),
+//         headers: { 'Content-Type': 'application/json' },
+//     })
  
-    if (response.ok) {
-        document.location.replace('/memes');
-    } else {
-        alert('Failed to create a new meme.');
-    }
-});
+//     if (response.ok) {
+//         document.location.replace('/memes');
+//     } else {
+//         alert('Failed to create a new meme.');
+//     }
+// });
