@@ -7,9 +7,9 @@ const eventdateInput = document.querySelector('#date');
 const eventphotoinput = document.querySelector('#photo');
 const submit = document.querySelectorAll('button');
 
-const networkingEvent = {
-    name: input.value,
-};
+// const networkingEvent = {
+//     name: input.value,
+// };
 
 
 // Add event listener to submit a new chat
