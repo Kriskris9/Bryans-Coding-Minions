@@ -12,6 +12,7 @@
  {{#if meme.gif}}
         <img src="{{meme.gif}}" alt="GIF">
       {{/if}} 
+
 </div>
 {{/each}}
 
@@ -76,7 +77,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
           photo: link,
           gif: null,
           video: null,
-          link: null,
+          link: link,
           user_id: 1,
       };
       console.log(newMeme);
@@ -85,6 +86,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
           headers: { 'Content-Type': 'application/json', },
           body: JSON.stringify(newMeme),
       })
+      console.log(response);
   
       if (response.ok) {
           document.location.replace('/memes');
