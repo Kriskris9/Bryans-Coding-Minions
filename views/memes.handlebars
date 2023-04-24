@@ -48,7 +48,9 @@
   let link = "";
   const form = document.querySelector('form');
   const memeTitle = document.querySelector('#meme_title');
+  console.log(memeTitle);
   const memeDescription = document.querySelector('#description');
+  console.log(memeDescription);
   const memeLink = document.querySelector('#link');
   const memePhoto = document.querySelector('#photo');
   const memeGif = document.querySelectorAll('#gif');
@@ -78,12 +80,13 @@ document.getElementById("upload_widget").addEventListener("click", function(){
       const newMeme = {
           title: memeTitle.value,
           description: memeDescription.value,
-          photo: link,
+          photo: null,
           gif: null,
           video: null,
-          link: null
+          link: null,
+          user_id: 1,
       };
-      console.log(newMeme)
+      console.log(newMeme);
       const response = await fetch('api/memes', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', },

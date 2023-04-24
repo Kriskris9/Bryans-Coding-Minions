@@ -21,7 +21,7 @@ Memes.init(
         },
     photo: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     gif: {
         type: DataTypes.STRING,
@@ -35,13 +35,13 @@ Memes.init(
         type: DataTypes.STRING,
         allowNull: true,
         },
-    // user_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'user',
-    //         key: 'id',
-    //     },
-    // }
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+        },
+    }
   },
 
 

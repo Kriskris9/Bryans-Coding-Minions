@@ -34,7 +34,7 @@ router.get('/memes', async (req, res) => {
             include: [{ model: User }]
         });
         const memes = memesData.map((meme) => meme.get({ plain: true }));
-        res.render('memes', { memes});
+        res.render('memes', { memes });
     } catch (err) {
         res.status(500).json(err);
     }
