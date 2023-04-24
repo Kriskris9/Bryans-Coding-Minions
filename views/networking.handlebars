@@ -4,9 +4,11 @@
   {{#each networking as |networking|}}
     <li>
       <p><strong>{{networking.event_name}}</strong></p>
-      <p>{{netwroking.location}}</p>
+      <p>{{networking.location}}</p>
       <p>{{networking.date}}</p>
+      {{#if networking.link}}
       <a href="{{networking.link}}">Event Link</a>
+      {{/if}}
       {{#if networking.photo}}
         <img src="{{networking.photo}}" alt="{{networking.event_name}} Photo">
       {{/if}}
@@ -22,15 +24,6 @@
     <input type="date" id="date" name="date">
     <label for="link">Link:</label>
     <input type="text" id="link" name="link">
-    <label for="media">Media:</label>
-    <select id="media" name="media">
-      <option class= "none" value="none">None</option>
-      <option class= "image" value="image">Image</option>
-    </select>
-    <div id="media-input">
-      <label for="media_file">File:</label>
-      <input type="file" id="media_file" name="media_file">
-    </div>
     <button type="submit"> Post A Networking Event </button>
   </form>
 
