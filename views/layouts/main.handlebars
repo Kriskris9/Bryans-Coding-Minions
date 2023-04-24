@@ -14,19 +14,10 @@
 </head>
 
 <body>
-  {{!-- <div class="area">
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul> --}}
+  
+   <div class="area">
+    
+    
 
 
   <div class="home-page">
@@ -52,17 +43,42 @@
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
-   
   </nav>
 
 
+<div class="imgandheader">
+  <img class="hero" src="./images/Bryan.png"> 
+  <h2> Welcome to Brian's Coding Minions! </h2>
+  <p> This is a place for coders to come together and share resources, study tips, and network with each other. </p>
+</div>
+
+<ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+ 
+</div>
   <main>
- {{{body}}}
- </main>
+    <div class="container">
+    {{{body}}}
+  </main>
+
+    </div>
+
+  
 
   <footer>
     <p> &copy; 2023 Brian's Coding Minions </p>
   </footer>
+
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
