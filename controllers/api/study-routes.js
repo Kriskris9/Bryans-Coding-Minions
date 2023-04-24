@@ -3,11 +3,13 @@ const { Study, User } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const studyTips = await Study.findAll();
-    include : [{ model: User }]
+    const studyTips = await Study.findAll(
+      {include : [{ model: User , attributes: ['user_name']}]},
+    );
     res.render('study', { studyTips });
 
     res.status(200).json(studyTips);
+    console.log(studyTips);
   } catch (err) {
     res.status(500).json(err);
   }
