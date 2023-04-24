@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
       {include : [{ model: User , attributes: ['user_name']}]},
     );
     res.render('study', { studyTips });
-
     res.status(200).json(studyTips);
     console.log(studyTips);
   } catch (err) {

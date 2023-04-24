@@ -18,21 +18,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
-
-// router.get('/', async (req, res) => {
-//   try {
-//     const studyTips = await Study.findAll();
-//     include : [{ model: User, attributes: ['user_name'] }]
-//     res.render('study', { studyTips });
-//     console.log(studyTips);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
 router.post('/', async (req, res) => {
   // create a new meme
   try {
