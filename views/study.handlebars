@@ -11,9 +11,9 @@
 
 
 
-<form action="/study" method="POST">
+<form id = "form">
     <label for="tip">Study Tip:</label>
-    <input type="text" id="study_tip" name="study_tip">
+    <input type="text" id="tip" name="tip">
     <button type="submit"> Post Study Tip </button>
   </form>
 </div>
@@ -32,12 +32,13 @@
 
 <script type = "text/javascript">
 let link = "";
-const form = document.querySelector('form');
+const form = document.querySelector('#form');
 const tipTitle = document.querySelector('#tip');
-const linkInput = document.querySelector('#link');
+{{!-- const linkInput = document.querySelector('#link');
 const photoInput = document.querySelector('#photo');
 const gifInput = document.querySelectorAll('#gif');
-const videoInput = document.querySelector('#video');
+const videoInput = document.querySelector('#video'); --}}
+console.log(tipTitle);
 
 var myWidget = cloudinary.createUploadWidget({
   cloudName: 'dtbznjxtz', 
@@ -60,14 +61,10 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const studyTip =
     {
-        title: tipTitle.value,
-        link: linkInput.value,
-        photo: photoInput.value,
-        gif: gifInput.value,
-        video: videoInput.value
+        tip: tipTitle.value,
         };
-
-        const response = await fetch('api/study', {
+        console.log(studyTip);
+        const response = await fetch('/api/study', {
             method: 'POST',
             body: JSON.stringify(studyTip),
             headers: { 'Content-Type': 'application/json' },
@@ -78,7 +75,7 @@ form.addEventListener('submit', async (event) => {
         alert('Failed to create a new study tip.');
     }
 });
-
+console.log()
 </script>
 
 
