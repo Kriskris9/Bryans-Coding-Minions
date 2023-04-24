@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try{
         const chatData = await Chat.create({
-            user_name: req.body.user_name,
+            user_name: req.session.username,
             message: req.body.message,
             photo: req.body.photo,
             gif: req.body.gif,
