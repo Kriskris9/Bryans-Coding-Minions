@@ -3,7 +3,7 @@
 }
 body {
     color: white;
-    background-color: black;
+    
     text-align: center;
     font-family: 'PT Mono', monospace;
     background: linear-gradient(to bottom, #232526, #414345);
@@ -92,17 +92,26 @@ button:hover {
     margin-top: 2%;
     padding-bottom: 2%;
 }
+input {
+    border-radius: 10px;
+    padding-right: 20px;
+}
 input:hover {
     padding: 3px;
 }
 
-
+form {
+    /* display: flex;
+    justify-content: center; */
+}
 
 .message-box {
-    border: 2px solid white;
+    border-radius: 10px;
     margin-top: 10%;
-    margin-bottom: 10%;
-    background-color: cornflowerblue; 
+    margin-bottom: 15%;
+    background-color: #cfe0fc; 
+    max-width: 75%;
+    
 }
 #chat-box {
     font-size: 30px;
@@ -111,18 +120,26 @@ input:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border-bottom: 2px solid black;
+    background-color: #262bb8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .dot {
-    height: 25px;
-    width: 25px;
-    background-color: #4e54c8;
+    height: 15px;
+    width: 15px;
+    background-color: #f64c72;
     border-radius: 50%;
-    box-shadow: 3px 3px 1px gray;
+    box-shadow: 3px 3px 1px black;
     margin-right: 5px;
+    margin-top: 10px;
 
 }
 #flex-end {
-    padding-top: 30%;
+    margin-top: 30%;
+    background-color: #262bb8;
+    padding-top: 10px;
+    
 }
 
 input {
@@ -159,7 +176,7 @@ select {
 }
 
 .circles{
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;

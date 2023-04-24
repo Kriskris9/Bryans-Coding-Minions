@@ -14,19 +14,10 @@
 </head>
 
 <body>
-  {{!-- <div class="area">
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul> --}}
+  
+   <div class="area">
+    
+    
 
 
   <div class="home-page">
@@ -44,17 +35,33 @@
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
-   
   </nav>
+
+<ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+ 
+</div>
   <main>
     <div class="container">
     {{{body}}}
-
     </div>
-  {{!-- </div> --}}
+
+  
+
   <footer>
     <p> &copy; 2023 Brian's Coding Minions </p>
   </footer>
+
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}

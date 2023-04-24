@@ -53,20 +53,23 @@
     </div>
 
 <div id="flex-end">
-    <label for="message">Message:</label>
-    <input type="text" id="message" name="message">
+    {{!-- <label for="message">Message:</label> --}}
+    <input placeholder="message..." type="text" id="message" name="message" size="50">
+    <button type="submit">Send</button>
     <label for="media">Media:</label>
+
     <select id="media" name="media">
       <option class="none" value="none">None</option>
       <option class="image" value="image">Image</option>
       <option class="gif" value="gif">GIF</option>
       <option class ="video" value="video">Video</option>
     </select>
+
     <div id="media-input">
       <label for="media_file">File:</label>
-      <input type="file" id="media_file" name="media_file">
+      <input type="file" id="media_file" name="media_file" class="fa fa-camera">
     </div>
-    <button type="submit">Send</button>
+    
     </form>
   </div>
 
