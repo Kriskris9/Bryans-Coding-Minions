@@ -14,7 +14,10 @@
 <form id = "form">
     <label for="tip">Study Tip:</label>
     <input type="text" id="tip" name="tip">
+    <label for="link">Link:</label>
+    <input type="text" id="link" name="link">
     <button type="submit"> Post Study Tip </button>
+  
   </form>
 </div>
    <button id="upload_widget" class="cloudinary-button">Upload files</button>
@@ -62,6 +65,7 @@ form.addEventListener('submit', async (event) => {
     const studyTip =
     {
         tip: tipTitle.value,
+        link: link.value,
         };
         console.log(studyTip);
         const response = await fetch('/api/study', {
