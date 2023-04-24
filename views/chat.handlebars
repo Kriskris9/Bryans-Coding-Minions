@@ -40,7 +40,7 @@
     {{/if}}
   {{/each}}
    </div>
-   <>
+
 
   <form action="/chat" method="POST">
   
@@ -114,6 +114,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 // Add event listener to submit a new chat
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
+
 
     const newChat = 
     {

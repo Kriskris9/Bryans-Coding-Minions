@@ -38,7 +38,7 @@
         <a href="/networking">Networking</a>
         <a href="/study">Study</a>
         <a href="/memes">Funny Memes</a>
-        {{#if logged_In}}
+        {{#if logged_in}}
         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
         <a href="/login">Login</a>
@@ -75,9 +75,29 @@
     <p> &copy; 2023 Bryan's Coding Minions </p>
   </footer>
 
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+  {{!-- {{#if logged_in}}
+  <script src="../../public/js/logout.js"></script>
+  {{/if}} --}}
+
+<script>
+  const logout = async () => {
+    const response = await fetch('/api/user/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to log out.');
+    }
+  };
+  
+  document.querySelector('#logout').addEventListener('click', logout);
+  
+
+</script>
+
 </body>
 
 </html>
