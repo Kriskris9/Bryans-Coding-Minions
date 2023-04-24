@@ -21,19 +21,19 @@ Memes.init(
         },
     photo: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     gif: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     video: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     link: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         },
     user_id: {
         type: DataTypes.INTEGER,

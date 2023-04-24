@@ -9,13 +9,13 @@ router.get('/', async (req, res) => {
             include: [{ model: Memes }, { model: Chat }, { model: Study }]
         });
         const users = userData.map((user) => user.get({ plain: true }));
-        res.render('layouts/main', { users });
+        res.render('homepage', { users });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/study', withAuth, async (req, res) => {
+router.get('/study', async (req, res) => {
     try {
         const studyData = await Study.findAll({
             include: [{ model: User }]
@@ -40,7 +40,7 @@ router.get('/memes', async (req, res) => {
     }
 });
 
-router.get('/networking', withAuth, async (req, res) => {
+router.get('/networking', async (req, res) => {
     try {
         const networkingData = await Networking.findAll({
             include: [{ model: User }]

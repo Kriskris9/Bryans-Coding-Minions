@@ -1,20 +1,20 @@
+{{!-- {{#if loggedIn}} --}}
+
 <h2> Study Tips/ Resources</h2>
 
-{{#each studytips as |studytip|}}
-
-{{#if loggedIn}}
+{{#each study as |studyTip|}}
 <div>
-  <h3>{{studytip.tip}}</h3>
-<a href="{{studytip.link}}">{{studytip.link}}</a>
+  <h3>{{studyTip.tip}}</h3>
+<a href="{{studyTip.link}}">{{studyTip.link}}</a>
 
-  {{#if studytip.photo}}
-    <img src="{{studytip.photo}}" alt="Photo">
+  {{#if studyTip.photo}}
+    <img src="{{studyTip.photo}}" alt="Photo">
   {{/if}}
-  {{#if studytip.gif}}
-    <img src="{{studytip.gif}}" alt="GIF">
+  {{#if studyTip.gif}}
+    <img src="{{studyTip.gif}}" alt="GIF">
   {{/if}}
-  {{#if studytip.video}}
-    <video src="{{studytip.video}}" alt="Video"></video>
+  {{#if studyTip.video}}
+    <video src="{{studyTip.video}}" alt="Video"></video>
   {{/if}}
 </div>
 {{/each}}
@@ -40,10 +40,10 @@
   </form>
 
 
-{{else}}
+{{!-- {{else}}
 
   <a href="/login">You must login first to view this page</a>
-{{/if}}
+{{/if}} --}}
 
 
 <script src="./js/study.js"></script>

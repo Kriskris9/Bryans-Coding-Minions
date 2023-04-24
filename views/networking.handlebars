@@ -1,14 +1,14 @@
 <h2>Networking Events</h2>
 
-{{#if loggedIn}}
-  {{#each events as |event|}}
+{{!-- {{#if loggedIn}} --}}
+  {{#each networking as |networking|}}
     <li>
-      <p><strong>{{event.event_name}}</strong></p>
-      <p>{{event.location}}</p>
-      <p>{{event.date}}</p>
-      <a href="{{event.link}}">Event Link</a>
-      {{#if event.photo}}
-        <img src="{{event.photo}}" alt="{{event.event_name}} Photo">
+      <p><strong>{{networking.event_name}}</strong></p>
+      <p>{{netwroking.location}}</p>
+      <p>{{networking.date}}</p>
+      <a href="{{networking.link}}">Event Link</a>
+      {{#if networking.photo}}
+        <img src="{{networking.photo}}" alt="{{networking.event_name}} Photo">
       {{/if}}
     </li>
   {{/each}}
@@ -34,9 +34,9 @@
     <button type="submit"> Post A Networking Event </button>
   </form>
 
-{{else}}
+{{!-- {{else}}
   <a href="/login">You must login first to view this page</a>
-{{/if}}
+{{/if}} --}}
 
 
 <script src="./js/networking.js"></script> 
