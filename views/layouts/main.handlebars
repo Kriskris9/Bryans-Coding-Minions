@@ -8,67 +8,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Pathway+Extreme:ital,wght@1,100&display=swap"
     rel="stylesheet">
-  <title>Brian's Coders</title>
+  <title>Bryan's Coders</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
-  
-   <div class="area">
-    
-    
+
+  <div class="area">
 
 
-  <div class="home-page">
-  <header>
-    <h1> Brian's Coding Minion's </h1>
-  </header>
-  <nav>
-    <a href="/">Home</a> 
-    <a href="/chat">Chat</a>
-    <a href="/networking">Networking</a>
-    <a href="/study">Study</a>
-    <a href="/memes">Funny Memes</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
 
 
-<div class="imgandheader">
-  <img class="hero" src="./images/Bryan.png"> 
-  <h2> Welcome to Brian's Coding Minions! </h2>
-  <p> This is a place for coders to come together and share resources, study tips, and network with each other. </p>
-</div>
+    <div class="home-page">
+      <header>
+        <h1> 👓 Bryan's Coding Minions </h1>
+      </header>
 
-<ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
- 
-</div>
-  <main>
-    <div class="container">
-    {{{body}}}
-  </main>
+      {{!-- <div class="imgandheader">
+        <img class="hero" src="./images/Bryan.png">
+        <div class="intro">
+          <h2>----- Welcome to Brian's Coding Minions!----- </h2>
+          <p> This is a place for coders to come together and share resources, study tips, and network with each other.
+          </p>
+        </div>
+        <img class="hero" src="./images/Bryan.png">
+
+      </div> --}}
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/chat">Chat</a>
+        <a href="/networking">Networking</a>
+        <a href="/study">Study</a>
+        <a href="/memes">Funny Memes</a>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+
+
+
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
 
     </div>
+    <main>
+      <div class="container">
+        {{{body}}}
+    </main>
 
-  
+  </div>
+
+
 
   <footer>
-    <p> &copy; 2023 Brian's Coding Minions </p>
+    <p> &copy; 2023 Bryan's Coding Minions </p>
   </footer>
 
   {{#if loggedIn}}
