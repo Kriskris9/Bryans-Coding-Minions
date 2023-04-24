@@ -1,5 +1,6 @@
 <h2> Let's Chat! </h2>
 
+{{!--  --}}
 {{!-- {{#if loggedIn}} --}}
 <div class= "chat">
   {{#each chats as |chat|}}
@@ -38,27 +39,17 @@
     {{/if}}
   {{/each}}
    </div>
-   <div>
+   <>
+
   <form action="/chat" method="POST">
-  <div class="message-box"> 
-
-    <div class="dots">
-      <span class="dot"></span>
-      <span class="dot"></span>
-     <span class="dot"></span>
-     <div id="chat-box"> The Chatbox</div>
-      <span class="dot"></span>
-      <span class="dot"></span>
-     <span class="dot"></span>
-    </div>
-
-<div id="flex-end">
+  <div id="flex-end">
     <label for="message">Message:</label>
     <input type="text" id="message" name="message">
     <button type="submit">Send</button>
-    </form>
   </div>
-  </div>
+  
+  </form>
+  <div>
    <button id="upload_widget" class="cloudinary-button">Upload files</button>
   </div>
  
@@ -106,7 +97,6 @@ document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
 
-// Add event listener to hide/show the media input field
 
 
 // Add event listener to submit a new chat

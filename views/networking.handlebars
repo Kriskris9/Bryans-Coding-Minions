@@ -15,23 +15,82 @@
     </li>
   {{/each}}
 
-<form action="/networking" method="POST">
+<form id="form">
+<div class="networking-event">
     <label for="event_name">Event Name:</label>
     <input type="text" id="event_name" name="event_name">
     <label for="location">Location:</label>
     <input type="text" id="location" name="location">
     <label for="date">Date:</label>
     <input type="date" id="date" name="date">
-    <label for="link">Link:</label>
-    <input type="text" id="link" name="link">
     <button type="submit"> Post A Networking Event </button>
-  </form>
+    </div>
+    </form>
+    <div>
+     <button id="upload_widget" class="cloudinary-button">Upload files</button>
+  </div>
+
+
+  
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
 {{!-- {{else}}
   <a href="/login">You must login first to view this page</a>
 {{/if}} --}}
 
 
-<script src="./js/networking.js"></script> 
+<script type="text/javascript">
+
+let link = "";
+const form = document.querySelector('#form');
+const locationInput = document.querySelector('#location');
+const linkInput = document.querySelector('#link');
+const eventnameInput = document.querySelector('#event_name');
+const eventdateInput = document.querySelector('#date');
+const eventphotoinput = document.querySelector('#photo');
+const submit = document.querySelectorAll('button');
 
 
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dtbznjxtz', 
+  uploadPreset: 'bni2efmk'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info.url);
+      link = result.info.url;
+      console.log(link);
+      return link;
+    }
+  }
+);
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+
+// Add event listener to submit a new chat
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const networkingEvent =
+    {   
+        event_name: eventnameInput.value,
+        location: locationInput.value,
+        date: eventdateInput.value,
+        photo: link,
+        
+        };
+
+    const response = await fetch('/api/networking', {
+        method: 'POST',
+        body: JSON.stringify(networkingEvent),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    if (response.ok) {
+        document.location.replace('/networking');
+    } else {
+        alert('Failed to create a new networking event.');
+    }
+});
+
+
+</script>
