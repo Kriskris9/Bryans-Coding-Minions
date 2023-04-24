@@ -18,16 +18,6 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-  // create a new networkingEvent
-  try {
-    const networkingData = await Networking.create(req.body);
-    res.status(200).json(networkingData);
-  } catch (err) {
-    res.status(400).json(err);
-  };
-});
-
-router.post('/', async (req, res) => {
     try{
         const networkingData = await Networking.create({
             location: req.body.location,
@@ -40,6 +30,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(networkingData);
         console.log(networkingData);
     } catch (err) {
+      console.log(err);
         res.status(400).json(err);
 }});
 

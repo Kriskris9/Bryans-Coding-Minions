@@ -15,7 +15,7 @@
     </li>
   {{/each}}
 
-<form action="/networking" method="POST">
+<form id="form">
 <div class="networking-event">
     <label for="event_name">Event Name:</label>
     <input type="text" id="event_name" name="event_name">
@@ -76,7 +76,7 @@ form.addEventListener('submit', async (event) => {
         event_name: eventnameInput.value,
         location: locationInput.value,
         date: eventdateInput.value,
-        photo: eventphotoinput.value,
+        photo: link,
         
         };
 
