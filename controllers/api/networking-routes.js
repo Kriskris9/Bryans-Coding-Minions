@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
+
     try{
         const networkingData = await Networking.create({
             location: req.body.location,
