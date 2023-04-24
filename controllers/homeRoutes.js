@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             include: [{ model: Memes }, { model: Chat }, { model: Study }]
         });
         const users = userData.map((user) => user.get({ plain: true }));
-        res.render('layouts/main', { users });
+        res.render('homepage', { users });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -21,7 +21,7 @@ router.get('/study', async (req, res) => {
             include: [{ model: User }]
         });
         const study = studyData.map((study) => study.get({ plain: true }));
-        res.render('study', { studyData });
+        res.render('study', { study });
     } catch (err) {
         res.status(500).json(err);
     }
