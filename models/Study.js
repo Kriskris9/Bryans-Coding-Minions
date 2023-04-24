@@ -18,7 +18,7 @@ Study.init(
         },
         link: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         photo: {
             type: DataTypes.STRING,
