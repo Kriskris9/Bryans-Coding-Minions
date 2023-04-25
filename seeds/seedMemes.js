@@ -36,7 +36,7 @@ const memesData =
       "title": "I have no idea what I am doing",
       "description": "A funny gif of a dog typing on the computer",
       "photo": "",
-      "gif": "https://giphy.com/embed/Dh5q0sShxgp13DwrvG",
+      "gif": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNiNzYwMGEwZGZmZDI3OWVkOTAzZWEyMmYyZWY4MmFiN2ZhYTMxYSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Dh5q0sShxgp13DwrvG/giphy.gif",
       "video": "",
       "link": "",
       "user_id": 4

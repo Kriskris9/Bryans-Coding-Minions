@@ -10,7 +10,7 @@ This is a networking hub for UCLA's full-stack development class. On this applic
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
-* [License](#license)\
+* [License](#license)
 * [Contributing](#contributing)
 
 
