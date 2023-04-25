@@ -1,7 +1,8 @@
-{{!-- {{#if loggedIn}} --}}
+
 
 <h2> Study Tips/ Resources</h2>
 
+{{#if logged_in}}
 {{#each study as |studyTip|}}
 <div>
   <h3>{{studyTip.tip}}</h3>
@@ -20,10 +21,10 @@
   </form>
 
 
-{{!-- {{else}}
+{{else}}
 
   <a href="/login">You must login first to view this page</a>
-{{/if}} --}}
+{{/if}}
 
 
 

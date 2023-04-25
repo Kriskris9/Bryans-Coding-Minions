@@ -1,6 +1,6 @@
 <h2>Networking Events</h2>
 
-{{!-- {{#if loggedIn}} --}}
+{{#if logged_in}}
   {{#each networking as |networking|}}
     <li>
       <p><strong>{{networking.event_name}}</strong></p>
@@ -34,9 +34,9 @@
   
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
-{{!-- {{else}}
+{{else}}
   <a href="/login">You must login first to view this page</a>
-{{/if}} --}}
+{{/if}}
 
 
 <script type="text/javascript">
