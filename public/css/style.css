@@ -1,13 +1,27 @@
 .home-page {
     padding-top: 70px;
 }
-
+#logout {
+    text-decoration: none;
+    color: white;
+    border: 2px solid #f64c72;
+    padding: 5px;
+    background-color: #f64c72;
+    transition: all .2s ease-in-out; 
+    font-family: 'PT Mono', monospace;
+    border-radius: none;
+    font-size: 30px;
+}
+#logout:hover {
+    padding: 7px; 
+    background-color:#f62d58 ;
+}
 .imgandheader {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     color: black;
+    flex-direction: column;
 }
 
 .intro {
@@ -16,6 +30,13 @@
     width: 50%;
     justify-content: center;
     padding: 10px;
+}
+#welcome {
+    font-size: 30px;
+    padding-top: 5%;
+}
+#welcome-intro {
+    padding-bottom: 15px;
 }
 body {
     color: white;
@@ -130,15 +151,23 @@ form {
 
 .message-box {
     border-radius: 10px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 15%;
-    background-color: #cfe0fc; 
+    background-color: black; 
     max-width: 75%;
     
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.chat-photo {
+    max-width: 30%;
 }
 #chat-box {
     font-size: 30px;
 }
+
 .dots {
     display: flex;
     flex-direction: row;
@@ -182,6 +211,146 @@ select {
     border: 2px solid white;
 }
 
+/* networking  */
+#networking-header {
+    margin-top: 2%;
+    background-color: black;
+    padding: 5px 0 5px 0;
+    font-size: 40px
+}
+#row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: black;
+}
+.event-name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+.network-location {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.network-date {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+}
+.network-card {
+    border: 1px solid black;
+    margin: 2%;
+    padding: 10px 20px 10px 20px;
+    width: 300px;
+    background-color: #262bb8;
+}
+.network-card:hover{
+    box-shadow: 0 7px 15px #afe0f5
+}
+.networking-event{
+    margin-bottom: 10%;
+    border: 1px solid black;
+    background-color: #232526;
+}
+.en{
+    display: flex;
+    flex-direction: column;
+}
+    
+.e {
+    margin-top: 10px;
+} 
+#net-buttons {
+    padding-top: 10px;
+}
+#add-event {
+    font-size: 20px;
+}
+
+/* study */
+.study-tip {
+    border: 1px dotted black;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 203, 56);
+    justify-content: flex-start;
+    
+}
+
+#study-format {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.study-tip-form {
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 10%;
+}
+#study-link {
+    background-color: black;
+    
+    border: none;
+    border-radius: 10px;
+}
+
+#study-link:hover {
+    box-shadow: 0 7px 15px #afe0f5;
+}
+#study-tip-name {
+    color: black;
+}
+
+#study-tips-resources {
+    font-size: 40px;
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    border-bottom: 2px dashed black;
+    background-color: black;
+    margin-top: 2%;
+
+
+}
+
+/* meme */
+.meme-img{
+    max-width: 25%;
+}
+.meme {
+    background-color: #f64c72;
+    margin: auto;
+    max-width: 40%;
+    max-height: 40%;
+    margin-bottom: 3%;
+    border: none;
+    border-top-right-radius: 15px;
+    color: black;
+}
+#meme-title {
+    text-decoration: underline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+#meme-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: black;
+}
+#meme-header{
+    margin-top: 2%;
+    background-color: black;
+    padding: 5px 0 5px 0;
+    font-size: 40px
+}
+.post-meme {
+    margin-bottom: 10%;
+}
 /* background */
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
@@ -264,12 +433,7 @@ select {
     animation-delay: 3s;
 }
 
-.circles li:nth-child(7){
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
+
 
 .circles li:nth-child(8){
     left: 50%;

@@ -1,31 +1,48 @@
-<h2>Networking Events</h2>
+<h2 id="networking-header">Networking Events</h2>
 
 {{#if logged_in}}
   {{#each networking as |networking|}}
-    <li>
-      <p><strong>{{networking.event_name}}</strong></p>
-      <p>{{networking.location}}</p>
-      <p>{{networking.date}}</p>
+  <div id="row">
+  <div class="network-card">
+      <p class="event-name"><strong>{{networking.event_name}}</strong></p>
+      <p class="network-location">{{networking.location}}</p>
+      <p class="network-date">{{networking.date}}</p>
       {{#if networking.link}}
       <a href="{{networking.link}}">Event Link</a>
       {{/if}}
       {{#if networking.photo}}
         <img src="{{networking.photo}}" alt="{{networking.event_name}} Photo">
       {{/if}}
-    </li>
+      </div>
+      </div>
   {{/each}}
+     </div>
 
 <form id="form">
 <div class="networking-event">
+  <p id="add-event"> Add an event!</p>
+
+  <div class="e">
     <label for="event_name">Event Name:</label>
     <input type="text" id="event_name" name="event_name">
+    </div>
+
+<div class="e">
     <label for="location">Location:</label>
     <input type="text" id="location" name="location">
+</div>
+
+<div class="e">
     <label for="date">Date:</label>
     <input type="date" id="date" name="date">
+</div>
+
+<div id="net-buttons">
     <button type="submit"> Post A Networking Event </button>
+    <button id="upload_widget" class="cloudinary-button">Upload files</button>
     </div>
-    </form>
+    </div>
+</form>
     <div>
      <button id="upload_widget" class="cloudinary-button">Upload files</button>
   </div>

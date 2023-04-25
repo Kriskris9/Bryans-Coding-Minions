@@ -1,17 +1,20 @@
-
-
-<h2> Study Tips/ Resources</h2>
-
+<h2 id="study-tips-resources"> Study Tips/ Resources</h2>
+<div id="study-format">
+  
 {{#if logged_in}}
+<div id="some">
 {{#each study as |studyTip|}}
-<div>
-  <h3>{{studyTip.tip}}</h3>
-<a href="{{studyTip.link}}">{{studyTip.link}}</a>
+<div class="study-tip">
+  <h3 id ="study-tip-name">{{studyTip.tip}}</h3>
+  <a id="study-link" href="{{studyTip.link}}">{{studyTip.link}}</a>
 </div>
 {{/each}}
 
+</div>
+</div>
 
 
+<div class="study-tip-form">
 <form id="form">
     <label for="tip">Study Tip:</label>
     <input type="text" id="tip" name="tip">
@@ -19,7 +22,7 @@
     <input type="text" id="link" name="link">
     <button type="submit"> Post Study Tip </button>
   </form>
-
+  </div>
 
 {{else}}
 
