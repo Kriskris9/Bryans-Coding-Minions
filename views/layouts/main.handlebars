@@ -18,20 +18,8 @@
 
     <div class="home-page">
       <header>
-        <h1> 👓 Bryan's Coding Minions </h1>
+        <h1> 👓 Bryan's Coding Minions 👓 </h1>
       </header>
-
-      {{!-- <div class="imgandheader">
-        <img class="hero" src="./images/Bryan.png">
-        <div class="intro">
-          <h2>----- Welcome to Brian's Coding Minions!----- </h2>
-          <p> This is a place for coders to come together and share resources, study tips, and network with each other.
-          </p>
-        </div>
-        <img class="hero" src="./images/Bryan.png">
-
-      </div> --}}
-
       <nav>
         <a href="/">Home</a>
         <a href="/chat">Chat</a>
@@ -44,8 +32,6 @@
         <a href="/login">Login</a>
         {{/if}}
       </nav>
-
-
 
       <ul class="circles">
         <li></li>
@@ -60,13 +46,11 @@
         <li></li>
       </ul>
 
-
     </div>
     <main>
-      <div class="container">
+      <div>
         {{{body}}}
     </main>
-
   </div>
 
 
@@ -79,24 +63,24 @@
   <script src="../../public/js/logout.js"></script>
   {{/if}} --}}
 
-<script>
-  const logout = async () => {
-    const response = await fetch('/api/user/logout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    });
-  
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log out.');
-    }
-  };
-  
-  document.querySelector('#logout').addEventListener('click', logout);
-  
+  <script>
+    const logout = async () => {
+      const response = await fetch('/api/user/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-</script>
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to log out.');
+      }
+    };
+
+    document.querySelector('#logout').addEventListener('click', logout);
+
+
+  </script>
 
 </body>
 
