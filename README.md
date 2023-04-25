@@ -1,4 +1,4 @@
-# Brian's Coding Minions
+# Bryan's Coding Minions
 
 ## Description 
 This is a networking hub for UCLA's full-stack development class. On this application, you can stay connected with your peers! You can chat, find and post memes, networking events, and useful study tips! 
