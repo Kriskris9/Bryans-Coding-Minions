@@ -49,6 +49,7 @@ Joseph Baek
 
 ## Deployed Link
 
+https://sleepy-caverns-11679.herokuapp.com/
 
 ## Github Repository
 https://github.com/Kriskris9/Project-2 
